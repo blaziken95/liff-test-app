@@ -1,5 +1,17 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Project Overview
+
+This project is a web application that integrates with the LINE Front-end Framework (LIFF) to provide user authentication and display user information. It includes the following features:
+
+- **LIFF Environment Information**: Displays information about the LIFF environment, such as whether the app is running in the LINE client and if the user is logged in.
+- **User Profile**: Shows the user's profile information, including user ID, display name, status message, and profile picture.
+- **User Friendship Information**: Provides details about the user's friendship status with the LINE official account.
+- **Login and Logout**: Allows users to log in and out using their LINE account.
+- **Troubleshooting**: Offers guidance on resolving common issues, such as checking provider and channel permissions if a 400 error occurs after login.
+
+The application is built using Next.js and styled with Tailwind CSS for a responsive and modern user interface.
+
 ## Getting Started
 
 First, run the development server:

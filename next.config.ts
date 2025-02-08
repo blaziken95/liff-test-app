@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // Remove output: 'export' to enable dynamic content
 };
 
 export default nextConfig;
