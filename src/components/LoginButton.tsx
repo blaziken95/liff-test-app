@@ -1,15 +1,16 @@
 "use client";
 
-import { Dispatch, SetStateAction } from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import liff from "@line/liff";
 
-type LoginButtonProps = {
+interface LoginButtonProps {
     isInitialized: boolean;
     isLoggedIn: boolean;
-    setIsLoggedIn: Dispatch<SetStateAction<boolean>>;
-};
+    setIsLoggedIn: React.Dispatch<React.SetStateAction<boolean>>;
+    className?: string;
+}
 
-export default function LoginButton({ isInitialized, isLoggedIn, setIsLoggedIn }: LoginButtonProps) {
+const LoginButton: React.FC<LoginButtonProps> = ({ isInitialized, isLoggedIn, setIsLoggedIn, className }) => {
     const handleLogin = async () => {
         try {
             if (!isInitialized) {
@@ -49,25 +50,23 @@ export default function LoginButton({ isInitialized, isLoggedIn, setIsLoggedIn }
     };
 
     return (
-        <div className="flex space-x-4">
+        <div className="flex flex-col space-y-4">
             <button
                 onClick={handleLogin}
                 disabled={isLoggedIn}
-                className={`px-12 py-6 rounded-xl text-white transition duration-200 text-3xl font-bold ${
-                    isLoggedIn ? "bg-gray-400 cursor-not-allowed" : "bg-blue-500 hover:bg-blue-600"
-                }`}
+                className={`px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 ${className}`}
             >
                 Login
             </button>
             <button
                 onClick={handleLogout}
                 disabled={!isLoggedIn}
-                className={`px-12 py-6 rounded-xl text-white transition duration-200 text-3xl font-bold ${
-                    !isLoggedIn ? "bg-gray-400 cursor-not-allowed" : "bg-red-500 hover:bg-red-600"
-                }`}
+                className={`px-6 py-3 bg-red-600 text-white font-semibold rounded-lg shadow-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50 ${className}`}
             >
                 Logout
             </button>
         </div>
     );
-}
+};
+
+export default LoginButton;

@@ -14,7 +14,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <html lang="en">
         <body className={`${geist.className} text-black flex flex-col h-screen`}>
             <header className="fixed top-0 left-0 right-0 bg-white shadow-md z-10 p-4 h-16">
-                <h1 className="text-center text-2xl font-bold">LIFF 데이터 확인용 앱</h1>
+                <h1 className="text-center text-2xl font-bold">Line 데이터 확인용 앱</h1>
             </header>
             <main className="flex-grow mt-16 mb-16 overflow-y-auto">
                 {children}
